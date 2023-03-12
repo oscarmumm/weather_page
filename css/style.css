@@ -1,0 +1,33 @@
+
+/* ------ FONDOS DE PANTALLA ------ */
+:root {
+  --01d: linear-gradient(0deg, rgba(0,140,217,1) 40%, rgba(0,235,255,1) 100%);
+  --02d: linear-gradient(0deg, rgba(0,140,217,1) 40%, rgba(0,235,255,1) 100%);
+  --03d: linear-gradient(0deg, rgba(75,103,121,1) 40%, rgba(123,168,198,1) 100%);
+  --04d: linear-gradient(0deg, rgba(75,103,121,1) 40%, rgba(123,168,198,1) 100%);
+  --09d: linear-gradient(0deg, rgba(75,103,121,1) 40%, rgba(123,168,198,1) 100%);
+  --10d: linear-gradient(0deg, rgba(75,103,121,1) 40%, rgba(123,168,198,1) 100%);
+  --11d: linear-gradient(0deg, rgba(75,103,121,1) 40%, rgba(123,168,198,1) 100%);
+  --13d: linear-gradient(0deg, rgba(75,103,121,1) 40%, rgba(123,168,198,1) 100%);
+  --50d: linear-gradient(0deg, rgba(75,103,121,1) 40%, rgba(123,168,198,1) 100%);
+  --01n: linear-gradient(0deg, rgba(0,11,105,1) 40%, rgba(34,0,180,1) 100%);
+  --02n: linear-gradient(0deg, rgba(0,11,105,1) 40%, rgba(34,0,180,1) 100%);
+  --03n: linear-gradient(0deg, rgba(48,41,78,1) 40%, rgba(104,92,157,1) 100%);
+  --04n: linear-gradient(0deg, rgba(48,41,78,1) 40%, rgba(104,92,157,1) 100%);
+  --09n: linear-gradient(0deg, rgba(48,41,78,1) 40%, rgba(104,92,157,1) 100%);
+  --10n: linear-gradient(0deg, rgba(48,41,78,1) 40%, rgba(104,92,157,1) 100%);
+  --11n: linear-gradient(0deg, rgba(48,41,78,1) 40%, rgba(104,92,157,1) 100%);
+  --13n: linear-gradient(0deg, rgba(48,41,78,1) 40%, rgba(104,92,157,1) 100%);
+  --50n: linear-gradient(0deg, rgba(48,41,78,1) 40%, rgba(104,92,157,1) 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
