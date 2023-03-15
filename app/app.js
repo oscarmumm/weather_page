@@ -1,6 +1,7 @@
 const apiKey = "1e0852abb42466a00a4d6d999c3e2b64";
 const d = document;
 const currentWeather = d.getElementById("current-weather");
+const mainContainer = d.getElementById("main-container");
 const cityName = d.getElementById("city-name");
 const weatherIcon = d.getElementById("weather-icon");
 const temperature = d.getElementById("temperature");
@@ -34,13 +35,14 @@ function error(err) {
 navigator.geolocation.getCurrentPosition(success, error, options);
 
 const showData = (data) => {
+  mainContainer.style.background = `var(--${data.weather[0].icon})`
   cityName.innerText = data.name;
   weatherIcon.src = `./icons/${data.weather[0].icon}.svg`;
   temperature.innerText = `${Math.round(data.main.temp)}°C`;
   feelsLike.innerText = `ST: ${Math.round(data.main.feels_like)}°C`;
-  condition.src = data.weather[0].description;
+  condition.innerText = data.weather[0].description;
   humidity.innerText = `${data.main.humidity} %`;
   pressure.innerText = `${data.main.pressure} hpa`;
-  visibility.innerText = `${(data.visibility)/1000} km`;
-  wind.innerText = data.wind.speed;
+  visibility.innerText = `${(data.visibility) / 1000} km`;
+  wind.innerText = `${Math.round((data.wind.speed) * 3.6)} km/h`;
 };
