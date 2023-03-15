@@ -1,46 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Página del clima</title>
-</head>
-<body>
-  <main class="main-container" id="main-container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Página del clima</title>
+  </head>
+  <body>
 
-    <section>
-      <div class="current-weather" id="current-weather">
-        <div class="city-name" id="city-name-div">
-          <p></p>
-        </div>
-        <div class="weather-icon" id="weather-icon-div">
-          
-        </div>
-        <div class="temperature" id="temperature-div">
+    <main class="main-container" id="main-container">
 
-        </div>
-        <div class="feels-like" id="feels-like-div">
+      <section class="current-weather" id="current-weather">
 
+        <div class="city-name-div" id="city-name-div">
+          <p class="city-name" id="city-name"> </p>
         </div>
-        <div class="condition" id="condition-div">
 
+        <div class="weather-icon-div" id="weather-icon-div">
+          <img
+            class="weather-icon icon"
+            id="weather-icon"
+            src="./icons/10d.svg"
+            alt=""
+          />
         </div>
-        <div class="humidity" id="humidity-div">
 
+        <div class="temperature-div" id="temperature-div">
+          <p class="temperature" id="temperature"> </p>
         </div>
-        <div class="pressure" id="pressure-div">
-
+        
+        <div class="feels-like-div" id="feels-like-div">
+          <p class="feels-like" id="feels-like"> </p>
         </div>
-      </div>
-    </section>
-    
-    <footer>
-      <!-- poner acá el disclaimer con los datos de la api que estamos utilizando -->
-    </footer>
-  </main>
+        
+        <div class="condition-div" id="condition-div">
+          <p class="condition" id="condition"> </p>
+        </div>
+        
+        <div class="humidity-div" id="humidity-div">
+          <p> <b> Humedad: </b> </p>
+          <p class="humidity" id="humidity"> </p>
+        </div>
+        
+        <div class="pressure-div" id="pressure-div">
+          <p> <b> Presión atmosférica: </b> </p>
+          <p class="pressure" id="pressure"> </p>
+        </div>
 
-  <script src="app/app.js"></script>
-</body>
+        <div class="visibility-div" id="visibility-div">
+          <p> <b> Visibilidad: </b> </p>
+          <p class="visibility" id="visibility"> </p>
+        </div>
+
+        <div class="wind-div" id="wind-div">
+          <p> <b> Viento: </b> </p>
+          <p class="wind" id="wind"> </p>
+        </div>
+      
+      </section>
+
+      <footer>
+        <!-- poner acá el disclaimer con los datos de la api que estamos utilizando -->
+      </footer>
+    </main>
+
+    <script src="app/app.js"></script>
+  </body>
 </html>
