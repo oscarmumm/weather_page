@@ -26,6 +26,9 @@ function success(pos) {
   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=${apiKey}&units=metric&lang=es`)
   .then((response) => response.json())
   .then((data) => showData(data));
+  fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${crd.latitude}&lon=${crd.longitude}&appid=${apiKey}&units=metric&lang=es`)
+  .then((response) => response.json())
+  .then((data) => testingDate(data))
 };
 
 function error(err) {
@@ -46,3 +49,8 @@ const showData = (data) => {
   visibility.innerText = `${(data.visibility) / 1000} km`;
   wind.innerText = `${Math.round((data.wind.speed) * 3.6)} km/h`;
 };
+
+const testingDate = (data) => {
+  console.log(data.list[0])
+  console.log(data.list[0].dt_txt)
+}
