@@ -98,6 +98,7 @@ body {
     width: 12px;
     background: #fff;
     animation: loader 1.5s linear infinite;
+    border-radius: 6px;
 }
 
 .loader div:nth-child(2) {
