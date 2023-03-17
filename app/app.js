@@ -1,9 +1,14 @@
 const apiKey = "1e0852abb42466a00a4d6d999c3e2b64";
 const d = document;
+const mainContainer = d.getElementById("main-container");
+
+
+// SCREENS
+const loadingScreen = d.getElementById('loading-screen'); 
+const currentWeather = d.getElementById("current-weather-section");
+const forecast = d.getElementById('forecast-section');
 
 // CURRENT WEATHER CONSTS
-const currentWeather = d.getElementById("current-weather");
-const mainContainer = d.getElementById("main-container");
 const cityName = d.getElementById("city-name");
 const weatherIcon = d.getElementById("weather-icon");
 const temperature = d.getElementById("temperature");
@@ -15,24 +20,24 @@ const visibility = d.getElementById("visibility");
 const wind = d.getElementById("wind");
 
 // WEATHER FORECAST CONSTS
-const forecastIcon1 = d.getElementById('forecast-icon1')
-const forecastTemp1 = d.getElementById('forecast-temp1')
-const forecastTime1 = d.getElementById('forecast-time1')
-const forecastIcon2 = d.getElementById('forecast-icon2')
-const forecastTemp2 = d.getElementById('forecast-temp2')
-const forecastTime2 = d.getElementById('forecast-time2')
-const forecastIcon3 = d.getElementById('forecast-icon3')
-const forecastTemp3 = d.getElementById('forecast-temp3')
-const forecastTime3 = d.getElementById('forecast-time3')
-const forecastIcon4 = d.getElementById('forecast-icon4')
-const forecastTemp4 = d.getElementById('forecast-temp4')
-const forecastTime4 = d.getElementById('forecast-time4')
-const forecastIcon5 = d.getElementById('forecast-icon5')
-const forecastTemp5 = d.getElementById('forecast-temp5')
-const forecastTime5 = d.getElementById('forecast-time5')
+const forecastIcon1 = d.getElementById('forecast-icon1');
+const forecastTemp1 = d.getElementById('forecast-temp1');
+const forecastTime1 = d.getElementById('forecast-time1');
+const forecastIcon2 = d.getElementById('forecast-icon2');
+const forecastTemp2 = d.getElementById('forecast-temp2');
+const forecastTime2 = d.getElementById('forecast-time2');
+const forecastIcon3 = d.getElementById('forecast-icon3');
+const forecastTemp3 = d.getElementById('forecast-temp3');
+const forecastTime3 = d.getElementById('forecast-time3');
+const forecastIcon4 = d.getElementById('forecast-icon4');
+const forecastTemp4 = d.getElementById('forecast-temp4');
+const forecastTime4 = d.getElementById('forecast-time4');
+const forecastIcon5 = d.getElementById('forecast-icon5');
+const forecastTemp5 = d.getElementById('forecast-temp5');
+const forecastTime5 = d.getElementById('forecast-time5');
 
 
-// Obteniendo la ubicación del usuario
+// Obtaining user location
 const options = {
   enableHighAccuracy: true,
   timeout: 5000,
@@ -47,7 +52,7 @@ function success(pos) {
   .then((data) => showCurrentWeather(data));
   fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${crd.latitude}&lon=${crd.longitude}&appid=${apiKey}&units=metric&lang=es`)
   .then((response) => response.json())
-  .then((data) => showForecast(data))
+  .then((data) => showForecast(data));
 };
 
 function error(err) {
@@ -57,7 +62,6 @@ function error(err) {
 navigator.geolocation.getCurrentPosition(success, error, options);
 
 const showCurrentWeather = (data) => {
-  console.log(data);
   mainContainer.style.background = `var(--${data.weather[0].icon})`
   cityName.innerText = data.name;
   weatherIcon.src = `./icons/${data.weather[0].icon}.svg`;
@@ -68,6 +72,8 @@ const showCurrentWeather = (data) => {
   pressure.innerText = `${data.main.pressure} hpa`;
   visibility.innerText = `${(data.visibility) / 1000} km`;
   wind.innerText = `${Math.round((data.wind.speed) * 3.6)} km/h`;
+  loadingScreen.style.display = 'none';
+  currentWeather.style.display = 'block';
 };
 
 const showForecast = (data) => {
@@ -86,4 +92,5 @@ const showForecast = (data) => {
   forecastTime5.innerText = `${data.list[4].dt_txt.slice(11, 16)}`;
   forecastTemp5.innerText = `${Math.round(data.list[4].main.temp)}°C`;
   forecastIcon5.src = `./icons/${data.list[4].weather[0].icon}.svg`;
+  forecast.style.display = 'block';
 };
