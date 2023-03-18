@@ -7,6 +7,7 @@ const mainContainer = d.getElementById("main-container");
 const loadingScreen = d.getElementById('loading-screen'); 
 const currentWeather = d.getElementById("current-weather-section");
 const forecast = d.getElementById('forecast-section');
+const footer = d.getElementById('footer');
 
 // CURRENT WEATHER CONSTS
 const cityName = d.getElementById("city-name");
@@ -93,4 +94,5 @@ const showForecast = (data) => {
   forecastTemp5.innerText = `${Math.round(data.list[4].main.temp)}°C`;
   forecastIcon5.src = `./icons/${data.list[4].weather[0].icon}.svg`;
   forecast.style.display = 'block';
+  footer.style.display = 'block';
 };
