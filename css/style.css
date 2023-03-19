@@ -231,7 +231,7 @@ body {
 
 /*---------- Media query ---------- */
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
     .current-weather {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(5, 1fr);
